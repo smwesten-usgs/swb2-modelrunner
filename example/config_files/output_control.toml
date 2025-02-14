@@ -1,0 +1,111 @@
+[geospatial]
+project_crs = 5070
+
+[variables]
+
+# grid_vars        = ['gross_precipitation', 'reference_ET0', 'actual_et', 'tmax', 'tmin',
+#                     'snowfall', 'snowmelt',
+#                     'net_infiltration','runoff','rejected_net_infiltration']
+
+grid_vars        = ['gross_precipitation', 'snowfall', 'net_infiltration']
+
+# the following are used to control the appearance of output plots
+[variables.weather_driver_dict]
+cmip6_bcc_csm2-mr = {color = 'darkred', linewidth = 0.9, linestyle = 'dotted'}
+cmip6_cesm2 = {color = 'darkblue', linewidth = 0.9, linestyle = 'dotted'}
+cmip6_cmcc_esm2 = {color = 'gold', linewidth = 0.9, linestyle = 'dotted'}
+cmip6_cnrm_esm2-1 = {color = 'darkgreen', linewidth = 0.9, linestyle = 'dotted'}
+cmip6_ipsl_cm6a-lr = {color = 'darkviolet', linewidth = 0.9, linestyle = 'dotted'}
+cmip6_miroc_es2l = {color = 'darkviolet', linewidth = 0.9, linestyle = 'dotted'}
+prism = {color = 'black', linewidth = 2, linestyle = 'dashdot'}
+
+[variables.variable_dict]
+gross_precipitation = {description = 'Gross precipitation', units = 'inches'}
+actual_et = {description = 'Actual evapotranspiration', units = 'inches'}
+reference_ET0 = {description = 'Reference evapotranspiration', units = 'inches'}
+snowfall = {description = 'Daily snowfall', units = 'inches'}
+snowmelt = {description = 'Daily snowmelt', units = 'inches'}
+tmax = {description = 'Maximum daily air temperature', units = 'degrees Fahrenheit'}
+tmin = {description = 'Minimum daily air temperature', units = 'degrees Fahrenheit'}
+net_infiltration = {description = 'Net infiltration', units = 'inches'}
+runoff = {description = 'Runoff', units = 'inches'}
+rejected_net_infiltration = {description = 'Rejected net infiltration', units = 'inches'}
+
+[input_grids]
+zone_mask_file   = "HUC10_mask__MN_SWB.asc"
+
+# the following control which of the various scenarios/weather data names, etc. are
+# actually processed in output grid generation and plotting
+[scenarios_and_periods]
+#scenario_names = ['historical','ssp245','ssp370','ssp585']
+scenario_names = ['ssp370']
+#weather_data_names = ['bcc_csm2-mr','cesm2','cmcc_esm2','cnrm_esm2-1','ipsl_cm6a-lr','miroc_es2l']
+weather_data_names = ['bcc_csm2-mr']
+#time_periods = ['1995-2014','2040-2059','2080-2099']
+time_periods = ['2040-2059']
+#summary_types = ['mean_monthly', 'mean_annual', 'annual','monthly']
+summary_types = ['mean_annual']
+
+
+# the entries below should not need to be changed 
+[output_data_types]
+
+[output_data_types.annual_sum_types]
+zone = 'str'
+mean = 'float'
+max = 'float'
+min = 'float'
+sum =  'float'
+std = 'float'
+var = 'float'
+count = 'int'
+month = 'int'
+year = 'int'
+date = 'str'
+run_designation = 'str' 
+weather_driver = 'str'
+swb_variable_name = 'str'
+
+[output_data_types.mean_annual_types]
+zone = 'str'
+mean = 'float'
+max = 'float'
+min = 'float'
+sum =  'float'
+std = 'float'
+var = 'float'
+count = 'int'
+date = 'str'
+run_designation = 'str' 
+weather_driver = 'str'
+swb_variable_name = 'str'
+
+[output_data_types.monthly_sum_types]
+zone = 'str'
+mean = 'float'
+max = 'float'
+min = 'float'
+sum =  'float'
+std = 'float'
+var = 'float'
+count = 'int'
+month = 'int'
+year = 'int'
+date = 'str'
+run_designation = 'str' 
+weather_driver = 'str'
+swb_variable_name = 'str'
+
+[output_data_types.mean_monthly_types]
+zone = 'str'
+mean = 'float'
+max = 'float'
+min = 'float'
+sum =  'float'
+std = 'float'
+var = 'float'
+count = 'int'
+month = 'int'
+run_designation = 'str' 
+weather_driver = 'str'
+swb_variable_name = 'str'

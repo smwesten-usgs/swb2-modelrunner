@@ -1,0 +1,30 @@
+# run_control.toml
+
+[working_directories]
+
+#absolute path
+top_level_dir = "/caldera/hovenweep/projects/usgs/water/umwsc/swb/projects/Minnesota"
+# relative paths
+git_dir = "git/mn_swb_cmip6_run_proc"
+gcm_runs_dir = "working_disposable_directory/gcm_runs"
+logfiles_dir = "working_disposable_directory/gcm_runs/logfiles"
+swb_work_dir    = "working_disposable_directory/gcm_runs/swb_runs"
+data_summary_dir = "working_disposable_directory/gcm_runs/data_summaries"
+plot_dir = "working_disposable_directory/gcm_runs/plots"
+grid_stats_dir = "working_disposable_directory/gcm_runs/grid_statistics"
+tif_image_dir = "working_disposable_directory/gcm_runs/tif_images"
+
+[data_directories]
+# relative to 'git_dir'
+swb_tabular_data_dir       = "swb_input/lookup_tables"
+swb_gridded_data_dir       = "swb_input/input_grids"
+swb_templates_dir          = "swb_input/templates"
+# weather_data_dir is the top level dir location containing the CMIP6-driven weather data
+weather_data_dir           = "/caldera/hovenweep/projects/usgs/water/umwsc/swb/data/U_Minnesota_CMIP6/"
+
+[input_tables]
+lu_lookup_table_name   = "mn__lu_lookup_table.txt"
+irr_lookup_table_name  = "mn__irr_lookup_table.txt"
+
+[auto_cleanup]
+cleanup_work_dir = false
